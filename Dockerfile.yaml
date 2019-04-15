@@ -1,0 +1,8 @@
+FROM centos:7
+
+RUN mkdir -p /symlink-image
+WORKDIR /symlink-image
+RUN mkdir -p source && \
+    mkdir -p link && \
+    echo "Hello world!" > source/hello.txt && \
+    ln -s ../source/hello.txt link/hello.txt
